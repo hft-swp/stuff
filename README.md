@@ -1,4 +1,4 @@
 stuff
 =====
 
-Stoffrepo for juhulian
+Stoffrepo für beispiele und doku
