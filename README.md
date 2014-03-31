@@ -1,4 +1,4 @@
 stuff
 =====
 
-Stoffrepo für beispiele und doku
+repo für beispiele und doku
