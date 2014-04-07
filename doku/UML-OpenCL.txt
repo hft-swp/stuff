@@ -1,0 +1,20 @@
+Paket Model:
+	- Die Klassen in dem Paket dienen zur Speicherung der eingelesenen Daten.
+	  Sie werden von allen anderen Paketen verwendet.
+	  
+	- Klasse:
+		- City: 		 	ist Singleton, zentraler Speicherort für Gebäude (Building, ...)
+		- MeshInterface: 	abstrakte Klasse zur Speicherung des Meshs.
+		- Building: 		leitet von MeshInterface ab, dient außerdem zur Speicherung von 
+							Volumen und anderen Metadaten.
+		- Triangle:			Speichert ein Dreieck, bestehend aus drei Punkten (Vertex).
+		- Vertex:			Speichert ein Punkt, bestehend aus drei float-Koordinaten.
+		- ShadowTriangle:	leitet von Triangle ab, speichert zusätzlich noch Schattenwerte.
+		
+Paket OpenCL:
+	- dieses Paket beinhaltet die Methoden um die Volumen- und Schattenberechnung auf der GPU auszuführen.
+	
+	- Klasse:
+		- VolumeCalculator:	berechnet das Volumen der Gebäude die im City-Singleton enthalten sind.
+		- ShadowCalculator:	berechnet die Schatten der Gebäude die im City-Singleton enthalten sind.
+		
