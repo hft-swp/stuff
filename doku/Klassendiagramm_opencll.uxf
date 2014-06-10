@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>9</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1125</x>
+      <y>45</y>
+      <w>207</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>OpenClException
+--
+_-SERIALVERSIONUID : long_
++OpenClException(s: String)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>198</y>
+      <w>504</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>CalculatorImpl
+--
++calculateVolume( ) : void
++calculateShadow(precision : ShadowPrecision, splitAzimuth: int, splitHeight : int) : void
++calculateArea( ) : void
++getDistance(v0 : Vertex, v1 : Vertex) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>837</x>
+      <y>378</y>
+      <w>495</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>/ShadowCalculatorInterface/
+--
++vertexDiff(v1 : Vertex, v0 : Vertex) : Vertex
++calculateShadow(precision : ShadowPrecision, splitAzimuth: int, splitHeight : int) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1026</x>
+      <y>774</y>
+      <w>306</w>
+      <h>171</h>
+    </coordinates>
+    <panel_attributes>OpenClContext
+--
+-context : cl_context
+-commandQueue : cl_command_queue
+-device : cl_device_id
+-instace : OpenClContext
+--
++getInstance( ) : OpenClContext
++reinit( ) : void
++createKernelFromFile(filename : String) : cl_kernel
++finalizeKernel(kernel : cl_kernel) : void
++profile(kernelEvent : cl_event) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>837</x>
+      <y>522</y>
+      <w>495</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>ShadowCalculatorJavaBackend
+--
++calculateShadow(precision : ShadowPrecision, splitAzimuth: int, splitHeight : int) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>738</y>
+      <w>333</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>SunPositionCalculator
+--
+-azimut : double
+-hr : double
+-x : double
+-y : double
+-z : double
+-CTFACTORY : CoordinateTransformFactory
+-WGS84_PARAM : String
+-CRSFACTORY : CRSFactory
+-WGS84 : CoordinateReferenceSystem
+--
++SunPositionCalculator(d : Date, parser : ParserInterface)
++getSunPosition(splitAzimuth : int, splitHeight : int) : int
++getJulianDate(cal : Calendar) : double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>378</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>/VolumeCalculatorInterface/
+--
++calculateVolume( )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>621</y>
+      <w>252</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>VolumeCalculatorOpenClBackend
+--
++VolumeCalculatorOpenClBackend( )
++calculateVolume( ) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>522</y>
+      <w>252</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>VolumeCalculatorJavaBackend
+--
++calculateVolume( ) : void
++det(a : Vertex, b : Vertex, c : Vertex) : float
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>981</x>
+      <y>27</y>
+      <w>161</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;throws&gt;&gt;</panel_attributes>
+    <additional_attributes>144;45;27;45</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1170</x>
+      <y>171</y>
+      <w>162</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enumeration&gt;&gt;
+ShadowPrecision
+--
+VERY_LOW
+LOW
+MID
+HIGH
+ULTRA
+HYPER
+AWESOME
+--
+-area : float
+-name : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>549</x>
+      <y>45</y>
+      <w>459</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>/CalculatorInterface/
+--
++calculateVolume( )
++calculateShadow(precision : ShadowPrecision, splitAzimuth : int, sp : int) : void
++calculateArea( ) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>702</x>
+      <y>99</y>
+      <w>142</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>72;99;72;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>837</x>
+      <y>621</y>
+      <w>495</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>ShadowCalculatorOpenClBackend
+--
+-TRIANGLE_COUNT : int
+-MAX_DISTANCE : float
++ShadowCalculatorOpenClBackend( )
++calculateShadow(precision : ShadowPrecision, splitAzimuth: int, splitHeight : int) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1134</x>
+      <y>693</y>
+      <w>44</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;81;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>630</x>
+      <y>279</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;99;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>909</x>
+      <y>279</y>
+      <w>44</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>27;99;27;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>585</x>
+      <y>432</y>
+      <w>142</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>72;90;72;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>459</x>
+      <y>360</y>
+      <w>142</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>90;270;72;270;72;27;90;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>864</x>
+      <y>432</y>
+      <w>142</w>
+      <h>107</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>72;90;72;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1287</x>
+      <y>360</y>
+      <w>142</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;.
+&lt;&lt;implements&gt;&gt;</panel_attributes>
+    <additional_attributes>45;270;72;270;72;27;45;27</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1026</x>
+      <y>162</y>
+      <w>161</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>144;27;81;27;81;81;27;81</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Package</type>
+    <coordinates>
+      <x>486</x>
+      <y>0</y>
+      <w>918</w>
+      <h>972</h>
+    </coordinates>
+    <panel_attributes>de.hft_stuttgart.swp2.opencl
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
