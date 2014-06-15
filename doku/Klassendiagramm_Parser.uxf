@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="12.2">
-  <zoom_level>8</zoom_level>
+  <zoom_level>6</zoom_level>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>56</x>
-      <y>32</y>
-      <w>328</w>
-      <h>192</h>
+      <x>72</x>
+      <y>18</y>
+      <w>426</w>
+      <h>174</h>
     </coordinates>
-    <panel_attributes>CGMLParser
+    <panel_attributes>Parser
 --
-- DEBUG : boolean
-+ parser : CGMLParser
+- city : City
++ parser : Parser
 - cityModel : CityModel
 - reference : double
 - epsg : String
 --
-+ getInstance() : CGMLParser
-+ exportToCGML(city : City, outputFileName : String) : boolean
-+ exportToCsv(city : City, outputFileName : String) : boolean
-- getBiuldingCoordinates() : void
++ getInstance() : Parser
+- calculateNormalVector(t : Triangle) : Vertex
+- findReferenceValue() : void
+# getCityModel() : CityModel
 + getEPSG() : String
-+ getReference() : double
++ getReference() : double[]
 + parse(InputFileName : String) : City
-- setBuildingCoordinates(city : City) : void
-bg=default</panel_attributes>
+- parseCityModel() : void
+- referenceRunner(property : BoundarySurfaceProperty) : void
+- surfaceRunner(property : BoundarySurfaceProperty, build : Building, polyTriangles : ArrayList&lt;Triangle&gt;) : void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -33,21 +34,20 @@ bg=default</panel_attributes>
     <coordinates>
       <x>48</x>
       <y>0</y>
-      <w>824</w>
-      <h>624</h>
+      <w>696</w>
+      <h>606</h>
     </coordinates>
     <panel_attributes>de.hft_stuttgart.swp2.parser
-bg=white
-fg=black</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>536</x>
-      <y>24</y>
-      <w>320</w>
-      <h>96</h>
+      <x>408</x>
+      <y>384</y>
+      <w>240</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>ParserInterface
 --
@@ -61,22 +61,22 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>360</x>
-      <y>48</y>
-      <w>192</w>
-      <h>88</h>
+      <x>480</x>
+      <y>60</y>
+      <w>184</w>
+      <h>336</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;implements&gt;&gt;</panel_attributes>
-    <additional_attributes>176;24;96;24;96;72;24;72</additional_attributes>
+    <additional_attributes>48;324;48;258;138;258;138;18;18;18;18;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>432</x>
-      <y>448</y>
-      <w>432</w>
-      <h>144</h>
+      <x>120</x>
+      <y>468</y>
+      <w>324</w>
+      <h>96</h>
     </coordinates>
     <panel_attributes>PolygonTriangulatorCallback
 --
@@ -95,10 +95,10 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>336</x>
-      <y>304</y>
-      <w>440</w>
-      <h>48</h>
+      <x>264</x>
+      <y>270</y>
+      <w>330</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>PolygonTranslate
 --
@@ -108,10 +108,10 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>128</x>
-      <y>424</y>
-      <w>192</w>
-      <h>184</h>
+      <x>72</x>
+      <y>306</y>
+      <w>144</w>
+      <h>138</h>
     </coordinates>
     <panel_attributes>PolygonTriangulatorCollector
 --
@@ -135,10 +135,10 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>744</x>
-      <y>224</y>
-      <w>112</w>
-      <h>24</h>
+      <x>342</x>
+      <y>360</y>
+      <w>84</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>RuntimeException</panel_attributes>
     <additional_attributes/>
@@ -146,22 +146,22 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>704</x>
-      <y>224</y>
-      <w>112</w>
-      <h>240</h>
+      <x>312</x>
+      <y>360</y>
+      <w>84</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;throws&gt;&gt;</panel_attributes>
-    <additional_attributes>96;24;96;176;24;176;24;224</additional_attributes>
+    <additional_attributes>72;18;72;48;18;48;18;108</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>512</x>
-      <y>152</y>
-      <w>312</w>
-      <h>40</h>
+      <x>354</x>
+      <y>228</y>
+      <w>234</w>
+      <h>30</h>
     </coordinates>
     <panel_attributes>PolygonTriangulator
 --
@@ -171,72 +171,72 @@ fg=black</panel_attributes>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>360</x>
-      <y>152</y>
-      <w>168</w>
-      <h>40</h>
+      <x>462</x>
+      <y>108</y>
+      <w>120</w>
+      <h>132</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>152;24;24;24</additional_attributes>
+    <additional_attributes>18;120;18;102;108;102;108;18;36;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>208</x>
-      <y>200</y>
-      <w>104</w>
-      <h>240</h>
+      <x>132</x>
+      <y>174</y>
+      <w>132</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;224;24;160;88;160;88;24</additional_attributes>
+    <additional_attributes>18;132;18;114;120;114;120;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>296</x>
-      <y>488</y>
-      <w>152</w>
-      <h>40</h>
+      <x>198</x>
+      <y>354</y>
+      <w>78</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>24;24;136;24</additional_attributes>
+    <additional_attributes>18;18;66;18;66;114</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Class</type>
     <coordinates>
-      <x>56</x>
-      <y>288</y>
-      <w>224</w>
-      <h>64</h>
+      <x>72</x>
+      <y>234</y>
+      <w>168</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>ParserException
 --
 + ParserException()
 + ParserException(failureMessage : String)
-fg=black</panel_attributes>
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>128</x>
-      <y>200</y>
-      <w>112</w>
-      <h>104</h>
+      <x>126</x>
+      <y>174</y>
+      <w>84</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 &lt;&lt;throws&gt;&gt;</panel_attributes>
-    <additional_attributes>24;88;24;56;96;56;96;24</additional_attributes>
+    <additional_attributes>18;60;18;30;72;30;72;18</additional_attributes>
   </element>
   <element>
     <type>com.umlet.element.Relation</type>
     <coordinates>
-      <x>296</x>
-      <y>328</y>
-      <w>272</w>
-      <h>160</h>
+      <x>198</x>
+      <y>288</y>
+      <w>240</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>256;24;256;56;88;56;88;144;24;144</additional_attributes>
+    <additional_attributes>228;18;228;54;18;54</additional_attributes>
   </element>
 </diagram>
